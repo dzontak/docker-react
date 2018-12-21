@@ -17,6 +17,6 @@ deploy:
     secure: $AWS_SECTRET_KEY
   region: "us-east-2"
   app: "docker-react"
-  evn: "DockerReact-env-1"
+  env: "DockerReact-env-1"
   bucket_name: "elasticbeanstalk-us-east-2-784308828437"
   bucket_path: "docker-react"
