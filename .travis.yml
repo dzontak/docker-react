@@ -9,20 +9,14 @@ before_install:
 script:
   - docker run denis/docker-react npm run test -- --coverage
 
-
-# elasticbeanstalk Environment ID: e-frthp7fjd2, URL: DockerReact-env-1.i3arbraqe2.us-east-2.elasticbeanstalk.com
-
 deploy:
   provider: elasticbeanstalk
+  access_key_id:
+    secure: "$AWS_ACCESS_KEY"
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
   region: "us-east-2"
   app: "docker-react"
   evn: "DockerReact-env-1"
   bucket_name: "elasticbeanstalk-us-east-2-784308828437"
   bucket_path: "docker-react"
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key:
-    secure: "$AWS_SECRET_KEY"
-
-
